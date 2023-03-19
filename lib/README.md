@@ -1,0 +1,3 @@
+- demo1 讲解riverpod的基本使用
+- demo2 讲解riverpod的进阶使用,通过创建多个Provider,来减少widget的重新构建
+- demo3 也是讲解riverpod的进阶使用,通过创建多个Provider,来减少widget的重新构建
