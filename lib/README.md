@@ -54,3 +54,26 @@ provider一般用于
 - 它消除了必须区分广播流和普通流的需要。
 - 它缓存由流发出的最新值，确保如果在事件发出后添加监听器， 监听器仍然可以立即访问最新的事件。
 - 它允许在测试期间通过覆盖`StreamProvider`轻松地模拟流。
+
+#### demo9 StateProvider的使用, StateNotifierProvider 的简化版，旨在避免为非常简单的用例编写 StateNotifier类。
+
+StateProvider 的存在主要是为了允许用户界面对简单的变量进行修改。 所以StateProvider 的状态通常为：
+
+- 枚举类型，例如筛选器类型
+- 一段字符串(String)，通常是输入框的原始内容
+- 用于复选框的布尔类型
+- 用于分页或年龄表单字段的数字
+
+不应该使用 StateProvider 如果：
+
+- 你的状态需要验证逻辑
+- 你的状态是一个复杂的对象 (比如自定义的类, 集合……)
+- 修改状态的逻辑比简单的 count++ 更复杂
+
+#### ChangeNotifierProvider ,不推荐使用,所以没有写示例
+```dart
+final todosProvider = ChangeNotifierProvider<TodosNotifier>((ref) {
+  return TodosNotifier();
+});
+```
+
