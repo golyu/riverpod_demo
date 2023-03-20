@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final chatProvider = StreamProvider<List<String>>((ref) async* {
-  final socket = await Socket.connect('localhost', 3000);
+  final socket = await Socket.connect('192.168.0.187', 3000);
   ref.onDispose(socket.close);
   var allMessages = <String>[];
   await for (final message in socket.map(utf8.decode)) {
@@ -38,4 +38,14 @@ class ChatWidget extends ConsumerWidget {
       error: (err, stackTrace) => Text(err.toString()),
     );
   }
+}
+
+void demo8() {
+  runApp(
+    const ProviderScope(
+      child: MaterialApp(
+        home: Scaffold(body: ChatWidget()),
+      ),
+    ),
+  );
 }
