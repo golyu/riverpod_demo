@@ -1,13 +1,6 @@
+import 'package:demo/model/models.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod_annotation/riverpod_annotation.dart';
-
-part 'demo1.g.dart';
-
-@riverpod
-String helloWorld(HelloWorldRef ref) {
-  return "Hello World";
-}
 
 final myProvider = Provider<String>((ref) {
   return "hello 2";

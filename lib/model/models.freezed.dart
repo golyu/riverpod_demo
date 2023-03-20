@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'demo4.dart';
+part of 'models.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,27 +15,27 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$Todo {
+mixin _$Todo4 {
   String get id => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   bool get isComplete => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $TodoCopyWith<Todo> get copyWith => throw _privateConstructorUsedError;
+  $Todo4CopyWith<Todo4> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $TodoCopyWith<$Res> {
-  factory $TodoCopyWith(Todo value, $Res Function(Todo) then) =
-      _$TodoCopyWithImpl<$Res, Todo>;
+abstract class $Todo4CopyWith<$Res> {
+  factory $Todo4CopyWith(Todo4 value, $Res Function(Todo4) then) =
+      _$Todo4CopyWithImpl<$Res, Todo4>;
   @useResult
   $Res call({String id, String description, bool isComplete});
 }
 
 /// @nodoc
-class _$TodoCopyWithImpl<$Res, $Val extends Todo>
-    implements $TodoCopyWith<$Res> {
-  _$TodoCopyWithImpl(this._value, this._then);
+class _$Todo4CopyWithImpl<$Res, $Val extends Todo4>
+    implements $Todo4CopyWith<$Res> {
+  _$Todo4CopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -67,18 +67,18 @@ class _$TodoCopyWithImpl<$Res, $Val extends Todo>
 }
 
 /// @nodoc
-abstract class _$$_TodoCopyWith<$Res> implements $TodoCopyWith<$Res> {
-  factory _$$_TodoCopyWith(_$_Todo value, $Res Function(_$_Todo) then) =
-      __$$_TodoCopyWithImpl<$Res>;
+abstract class _$$_Todo4CopyWith<$Res> implements $Todo4CopyWith<$Res> {
+  factory _$$_Todo4CopyWith(_$_Todo4 value, $Res Function(_$_Todo4) then) =
+      __$$_Todo4CopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String id, String description, bool isComplete});
 }
 
 /// @nodoc
-class __$$_TodoCopyWithImpl<$Res> extends _$TodoCopyWithImpl<$Res, _$_Todo>
-    implements _$$_TodoCopyWith<$Res> {
-  __$$_TodoCopyWithImpl(_$_Todo _value, $Res Function(_$_Todo) _then)
+class __$$_Todo4CopyWithImpl<$Res> extends _$Todo4CopyWithImpl<$Res, _$_Todo4>
+    implements _$$_Todo4CopyWith<$Res> {
+  __$$_Todo4CopyWithImpl(_$_Todo4 _value, $Res Function(_$_Todo4) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -88,7 +88,7 @@ class __$$_TodoCopyWithImpl<$Res> extends _$TodoCopyWithImpl<$Res, _$_Todo>
     Object? description = null,
     Object? isComplete = null,
   }) {
-    return _then(_$_Todo(
+    return _then(_$_Todo4(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -107,8 +107,8 @@ class __$$_TodoCopyWithImpl<$Res> extends _$TodoCopyWithImpl<$Res, _$_Todo>
 
 /// @nodoc
 
-class _$_Todo implements _Todo {
-  _$_Todo(
+class _$_Todo4 implements _Todo4 {
+  _$_Todo4(
       {required this.id, required this.description, required this.isComplete});
 
   @override
@@ -120,14 +120,14 @@ class _$_Todo implements _Todo {
 
   @override
   String toString() {
-    return 'Todo(id: $id, description: $description, isComplete: $isComplete)';
+    return 'Todo4(id: $id, description: $description, isComplete: $isComplete)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Todo &&
+            other is _$_Todo4 &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.description, description) ||
                 other.description == description) &&
@@ -141,15 +141,15 @@ class _$_Todo implements _Todo {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TodoCopyWith<_$_Todo> get copyWith =>
-      __$$_TodoCopyWithImpl<_$_Todo>(this, _$identity);
+  _$$_Todo4CopyWith<_$_Todo4> get copyWith =>
+      __$$_Todo4CopyWithImpl<_$_Todo4>(this, _$identity);
 }
 
-abstract class _Todo implements Todo {
-  factory _Todo(
+abstract class _Todo4 implements Todo4 {
+  factory _Todo4(
       {required final String id,
       required final String description,
-      required final bool isComplete}) = _$_Todo;
+      required final bool isComplete}) = _$_Todo4;
 
   @override
   String get id;
@@ -159,5 +159,6 @@ abstract class _Todo implements Todo {
   bool get isComplete;
   @override
   @JsonKey(ignore: true)
-  _$$_TodoCopyWith<_$_Todo> get copyWith => throw _privateConstructorUsedError;
+  _$$_Todo4CopyWith<_$_Todo4> get copyWith =>
+      throw _privateConstructorUsedError;
 }
