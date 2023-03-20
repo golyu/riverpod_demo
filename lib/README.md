@@ -39,3 +39,18 @@ provider一般用于
 
 > FutureProvider 不提供给用户交互后直接修改计算结果的方法。它被设计用来解决简单的用例。
 > 对于更高级的场景请考虑使用StateNotifierProvider 。
+
+#### demo8 StreamProvider的使用,类似于 FutureProvider 但用于 Streams 而不是 Futures。
+
+一般用于
+
+- 监听Firebase或web-sockets
+- 每隔几秒重建另一个provider
+
+好处
+
+- 它允许其他provider使用 ref.watch 监听流。
+- 多亏了 AsyncValue ，它能确保加载和错误情况得到正确处理。
+- 它消除了必须区分广播流和普通流的需要。
+- 它缓存由流发出的最新值，确保如果在事件发出后添加监听器， 监听器仍然可以立即访问最新的事件。
+- 它允许在测试期间通过覆盖`StreamProvider`轻松地模拟流。
