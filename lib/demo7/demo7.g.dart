@@ -7,7 +7,7 @@ part of 'demo7.dart';
 // **************************************************************************
 
 String _$fetchConfigurationHash() =>
-    r'ba3f42db5a0fa764ea28fa3103181bdddd0af6d7';
+    r'22ebdce472fbd2aa7ee28cb89b6db230cc4fbe69';
 
 /// See also [fetchConfiguration].
 @ProviderFor(fetchConfiguration)

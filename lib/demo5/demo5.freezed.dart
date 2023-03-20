@@ -14,12 +14,17 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+Todo _$TodoFromJson(Map<String, dynamic> json) {
+  return _Todo.fromJson(json);
+}
+
 /// @nodoc
 mixin _$Todo {
   String get id => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   bool get isComplete => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $TodoCopyWith<Todo> get copyWith => throw _privateConstructorUsedError;
 }
@@ -106,10 +111,12 @@ class __$$_TodoCopyWithImpl<$Res> extends _$TodoCopyWithImpl<$Res, _$_Todo>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_Todo implements _Todo {
   _$_Todo(
       {required this.id, required this.description, required this.isComplete});
+
+  factory _$_Todo.fromJson(Map<String, dynamic> json) => _$$_TodoFromJson(json);
 
   @override
   final String id;
@@ -135,6 +142,7 @@ class _$_Todo implements _Todo {
                 other.isComplete == isComplete));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, description, isComplete);
 
@@ -143,6 +151,13 @@ class _$_Todo implements _Todo {
   @pragma('vm:prefer-inline')
   _$$_TodoCopyWith<_$_Todo> get copyWith =>
       __$$_TodoCopyWithImpl<_$_Todo>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_TodoToJson(
+      this,
+    );
+  }
 }
 
 abstract class _Todo implements Todo {
@@ -150,6 +165,8 @@ abstract class _Todo implements Todo {
       {required final String id,
       required final String description,
       required final bool isComplete}) = _$_Todo;
+
+  factory _Todo.fromJson(Map<String, dynamic> json) = _$_Todo.fromJson;
 
   @override
   String get id;
