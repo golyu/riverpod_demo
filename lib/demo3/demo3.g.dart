@@ -22,7 +22,7 @@ final canGoToPreviousPageProvider = AutoDisposeProvider<bool>.internal(
 );
 
 typedef CanGoToPreviousPageRef = AutoDisposeProviderRef<bool>;
-String _$pageIndexHash() => r'1458474c3ef9aeff69021bc90336efe14b850097';
+String _$pageIndexHash() => r'd03be1a918d9d391201ac01bc9be2f94c6e14ead';
 
 /// See also [PageIndex].
 @ProviderFor(PageIndex)
