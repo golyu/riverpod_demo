@@ -9,7 +9,7 @@ class TodoListView extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    List<Todo4> todos = ref.watch(todo4sProvider);
+    final todos = ref.watch(todo4sProvider);
     return ListView(
       children: [
         for (final todo in todos)

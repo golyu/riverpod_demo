@@ -2,7 +2,6 @@ import 'package:demo/model/models.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-
 demo2() {
   runApp(const ProviderScope(child: MyApp()));
 }
@@ -13,6 +12,8 @@ class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final List<Todo> todos = ref.watch(completeTodosProvider);
+    final Todos todosNotifier = ref.watch(todosProvider.notifier);
+
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -20,26 +21,23 @@ class MyApp extends ConsumerWidget {
       ),
       home: Scaffold(
         appBar: AppBar(title: const Text('第二个')),
-        body: Consumer(builder: (context, ref, child) {
-          final List<Todo> todos = ref.watch(completeTodosProvider);
-          return ListView(
-            children: todos
-                .map(
-                  (todo) => ListTile(
-                    title: Text(todo.description),
-                  ),
-                )
-                .toList(),
-          );
-        }),
+        body: ListView(
+          children: todos
+              .map(
+                (todo) => ListTile(
+                  title: Text(todo.description),
+                ),
+              )
+              .toList(),
+        ),
         floatingActionButton: ElevatedButton(
           onPressed: () {
-            ref.read(todosProvider.notifier).addTodo(
-                  Todo(
-                    'Todo ${todos.length + 1}',
-                    true,
-                  ),
-                );
+            todosNotifier.addTodo(
+              Todo(
+                'Todo ${todos.length + 1}',
+                true,
+              ),
+            );
           },
           child: const Text('添加Todo'),
         ),

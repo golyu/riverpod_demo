@@ -71,9 +71,23 @@ StateProvider 的存在主要是为了允许用户界面对简单的变量进行
 - 修改状态的逻辑比简单的 count++ 更复杂
 
 #### ChangeNotifierProvider ,不推荐使用,所以没有写示例
+
 ```dart
+
 final todosProvider = ChangeNotifierProvider<TodosNotifier>((ref) {
   return TodosNotifier();
 });
 ```
+
+#### ref.listen
+可以在provider内部使用,也可以在 build 方法中
+类似于vue的watch ,ref.watch 类似于vue的computed
+
+与 ref.watch 类似，也可以使用ref.listen来观察一个provider,它们之间的主要区别是，
+如果监听的provider发生更改， 使用 ref.listen 将调用自定义的函数，而不是重新构建widget/provider。
+
+#### 注意
+
+watch 方法不应该被异步调用。 它也不应该在 initState 和其他 State 的生命周期中使用。
+在这种情况下，请考虑使用 ref.read。
 
