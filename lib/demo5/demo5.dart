@@ -15,7 +15,6 @@ class Todo with _$Todo {
     required bool isComplete,
   }) = _Todo;
 
-// factory Todo.fromJson(Map<String, dynamic> json) => _$TodoFromJson(json);
 }
 
 @riverpod

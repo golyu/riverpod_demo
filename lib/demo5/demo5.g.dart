@@ -6,7 +6,7 @@ part of 'demo5.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$asyncTodosHash() => r'6b7215cfe2b8eab2c4b3b3851fd1c626bae3999f';
+String _$asyncTodosHash() => r'47cfd9354152dfd095b548796b8f8be96763fae2';
 
 /// See also [AsyncTodos].
 @ProviderFor(AsyncTodos)
